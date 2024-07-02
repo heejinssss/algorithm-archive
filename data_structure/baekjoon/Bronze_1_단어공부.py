@@ -15,11 +15,11 @@ alphabet = {"A" : 0, "B": 0,
 s = input()
 
 for letter in s:
-  alphabet[letter.upper()] += 1
+    alphabet[letter.upper()] += 1
 
 result = [k for k,v in alphabet.items() if max(alphabet.values()) == v]
 
 if len(result) > 1:
-  print("?")
+    print("?")
 else:
-  print(result[0])
+    print(result[0])
