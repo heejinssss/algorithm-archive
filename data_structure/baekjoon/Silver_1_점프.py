@@ -17,7 +17,7 @@ dp[0][0] = 1
 
 print(myDP(N, board, dp))
 
-# 시간 초과
+# [Time out]
 """
 def myDP(N, board):
     dp = [[0]*N for _ in range(N)]
