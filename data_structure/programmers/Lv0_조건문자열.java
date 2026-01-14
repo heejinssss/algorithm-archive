@@ -15,6 +15,7 @@ class Solution {
                 answer = n < m ? 1 : 0;
             }
         }
+
         return answer;
     }
 }
