@@ -1,32 +1,34 @@
 class Solution {
-    public int solution(String my_string, String is_suffix) {
+    public int solution(String my_string, String is_prefix) {
         int answer = 0;
 
-        if (my_string.endsWith(is_suffix)) {
+        if (my_string.startsWith(is_prefix)) {
             answer = 1;
         } else {
             answer = 0;
         }
-        
+
         return answer;
 
         /*
-        int my_string_len = my_string.length();
-        int is_suffix_len = is_suffix.length();
-        int len = my_string_len - is_suffix_len;
+        if (is_prefix.length() > my_string.length()) {
+            return answer;
+        }
 
-        String pivot = "";
+        String pre = "";
+        String str = "";
 
-        if (len > -1) {
-            pivot = my_string.substring(len);
-            if (pivot.equals(is_suffix)) {
-                return 1;
-            } else {
+        for (int i = 0; i < is_prefix.length(); i++) {
+            
+            pre = is_prefix.substring(i,i+1);
+            str = my_string.substring(i,i+1);
+
+            if (!pre.equals(str)) {
                 return 0;
             }
-        } else {
-            return 0;
         }
+
+        return 1; // 반복문이 정상 종료되는 경우
         */
     }
 }
