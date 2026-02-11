@@ -1,0 +1,18 @@
+class Solution {
+    public int[] solution(int[] arr, int[][] intervals) {
+        int fst = intervals[0][1] - intervals[0][0] + 1;
+        int snd = intervals[1][1] - intervals[1][0] + 1;
+
+        int[] answer = new int[fst+snd];
+
+        for (int i = 0; i < fst; i++) {
+            answer[i] = arr[intervals[0][0] + i];
+        }
+
+        for (int i = 0; i < snd; i++) {
+            answer[fst + i] = arr[intervals[1][0] + i];
+        }
+
+        return answer;
+    }
+}
