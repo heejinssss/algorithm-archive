@@ -1,34 +1,35 @@
-// Retry
 import java.util.Arrays;
 
 class Solution {
     public int solution(int[] array) {
         int answer = 0;
 
+        // 입력 array 오름차순 정렬을 보장하지 않기 때문에 최초 정렬
         Arrays.sort(array);
 
-        int[] count_arr = new int[array[array.length-1]+1];
+        int size = array[array.length-1] + 1;
+        int[] count_arr = new int[size];
 
         for (int num : array) {
             count_arr[num] += 1;
         }
 
-        Arrays.sort(count_arr);
+        int maxIndex = 0;
+        int maxCount = 0;
 
-        int maxCount        = count_arr[count_arr.length-1];
-        int maxCountIndex   = count_arr.length-1;
-
-        for (int i = maxCountIndex-1; i > 0; i--) {
-            if (maxCount < count_arr[i]) {
+        for (int i = 0; i < count_arr.length; i++) {
+            if (count_arr[i] >= maxCount) {
+                maxIndex = i;
                 maxCount = count_arr[i];
-                maxCountIndex = i;
-            } else if (maxCount > count_arr[i]) {
-                return i;
-            } else if (maxCount == count_arr[i]) {
+            }
+        }
+        
+        for (int i = 0; i < count_arr.length; i++) {
+            if (count_arr[maxIndex] == count_arr[i] && maxIndex != i) {
                 return -1;
             }
         }
 
-        return maxCountIndex;
+        return maxIndex;
     }
 }
