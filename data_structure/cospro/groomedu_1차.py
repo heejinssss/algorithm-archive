@@ -149,3 +149,68 @@ n2 = 2
 ret2 = solution(n2)
 
 print("solution 함수의 반환 값은", ret2, "입니다.")
+
+# 6
+def solution(pos):
+	answer = 0
+
+	sx, sy = ord(pos[0])-65, int(pos[1])-1
+
+	dx = [-1, -2, -2, -1, 1, 2, 2, 1]
+	dy = [-2, -1, 1, 2, 2, 1, -1, -2]
+
+	for i in range(8):
+		if (sx+dx[i] >= 0 and sx+dx[i] < 8 and sy+dy[i] >= 0 and sy+dy[i] < 8):
+			answer += 1
+
+	return answer
+
+pos = "A7"
+ret = solution(pos)
+
+print("solution 함수의 반환 값은", ret, "입니다.")
+
+# 8
+def solution(N, votes):
+	vote_counter = [0 for i in range(N+1)]
+	for i in votes:
+		vote_counter[i] += 1
+
+	max_val = max(vote_counter)
+
+	answer = []
+	for idx in range(1, N + 1):
+		if vote_counter[idx] == max_val:
+			answer.append(idx)
+	return answer
+N1 = 5
+votes1 = [1,5,4,3,2,5,2,5,5,4]
+ret1 = solution(N1, votes1)
+
+print("solution 함수의 반환 값은", ret1, "입니다.")
+
+N2 = 4
+votes2 = [1, 3, 2, 3, 2]
+ret2 = solution(N2, votes2)
+
+print("solution 함수의 반환 값은", ret2, "입니다.")
+
+# 10
+def solution(prices):
+	INF = 1000000001;
+	tmp = INF
+	answer = -INF
+	for price in prices:
+		if tmp != INF:
+			answer = max(answer, price - tmp)
+		tmp = min(tmp, price)
+	return answer
+prices1 = [1, 2, 3];
+ret1 = solution(prices1);
+
+print("solution 함수의 반환 값은", ret1, "입니다.")
+    
+prices2 = [3, 1];
+ret2 = solution(prices2);
+
+print("solution 함수의 반환 값은", ret2, "입니다.")
