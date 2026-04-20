@@ -11,8 +11,6 @@ def solution(video_len, pos, op_start, op_end, commands):
     for c in commands:
         p = curPos(v, p-10 if c == "prev" else p+10, s, e)
 
-    p = curPos(v, p, s, e)
-
     min = p // 60
     sec = p % 60
 
