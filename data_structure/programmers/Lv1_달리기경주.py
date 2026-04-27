@@ -1,5 +1,7 @@
 def solution(players, callings):
 
+    # 리스트에서 index()로 위치 찾으면 O(n)
+    # 딕셔너리에서 key로 위치 조회하면 평균 O(1)
     pos = { player: i for i, player in enumerate(players) }
 
     for calling in callings:
