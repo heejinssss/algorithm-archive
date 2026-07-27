@@ -1,17 +1,13 @@
-from collections import deque
+import math
 
 def solution(a, b):
 
-    stack = []
-    lst = deque(list(str(a/b)))
+    b //= math.gcd(a, b)
 
-    for i in range(str(a/b).index(".")+1):
-        lst.popleft()
+    while b % 2 == 0:
+        b //= 2
 
-    for i in range(len(lst)):
-        stack.append(lst.popleft())
-        if stack == list(lst)[:len(stack)]:
-            return 2
-            break
-    else:
-        return 1
+    while b % 5 == 0:
+        b //= 5
+
+    return 1 if b == 1 else 2
