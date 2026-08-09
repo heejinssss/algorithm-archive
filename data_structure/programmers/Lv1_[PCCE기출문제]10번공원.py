@@ -10,8 +10,6 @@ def solution(mats, park):
 
     for i in range(h):
         for j in range(w):
-            if i == 0 or j == 0:
-                dp[i][j] == 1
             if park[i][j] == "-1":
                 dp[i][j] = min([dp[i-1][j], dp[i][j-1], dp[i-1][j-1]]) + 1
                 maxV = max(maxV, dp[i][j])
