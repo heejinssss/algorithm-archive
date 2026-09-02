@@ -22,3 +22,10 @@ def solution(arr):
         result = lcm(result, a)
 
     return result
+
+"""
+import math
+
+def solution(arr):
+    return math.lcm(*arr)
+"""
