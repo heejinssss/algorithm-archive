@@ -1,4 +1,5 @@
 def solution(record):
+
     answer = []
 
     fin_nickname = {}
