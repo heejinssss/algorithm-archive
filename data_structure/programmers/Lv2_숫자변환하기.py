@@ -1,4 +1,5 @@
 def solution(x, y, n):
+
     visited = [0] * (y+1)
     case = [[y, 0]]
     result = []
