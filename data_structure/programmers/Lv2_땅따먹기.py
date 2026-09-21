@@ -1,13 +1,6 @@
 def solution(land):
-    cand = []
+    for i in range(1, len(land)):
+        for j in range(4):
+            land[i][j] += max(land[i-1][:j] + land[i-1][j+1:])
 
-    for i in range(4):
-        prev_index = i
-        value = land[0][i]
-        for j in range(1, len(land)):
-            land[j][prev_index] = 0
-            value += max(land[j])
-            prev_index = land[j].index(max(land[j]))
-        cand.append(value)
-
-    return max(cand)
+    return max(land[-1])
