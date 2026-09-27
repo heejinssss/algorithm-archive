@@ -1,3 +1,5 @@
+# 리팩토링 필요
+
 def solution(elements):
     l = len(elements)
     sum_result = set()
