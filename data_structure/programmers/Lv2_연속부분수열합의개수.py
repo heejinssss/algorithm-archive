@@ -1,12 +1,12 @@
-# 리팩토링 필요
-
 def solution(elements):
     l = len(elements)
     sum_result = set()
-    elements = elements + elements[:len(elements)-1]
 
     for i in range(l):
-        for j in range(l):
-            sum_result.add(sum(elements[j:j+i+1]))
+        _sum = elements[i]
+        sum_result.add(_sum)
+        for j in range(i+1, l+i):
+            _sum += elements[j%l]
+            sum_result.add(_sum)
 
     return len(sum_result)
