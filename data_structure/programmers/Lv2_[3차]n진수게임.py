@@ -1,3 +1,4 @@
 def solution(n, t, m, p):
-    answer = ''
+    answer = ""
+
     return answer
