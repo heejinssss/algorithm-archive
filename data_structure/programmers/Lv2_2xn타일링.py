@@ -8,8 +8,7 @@ def solution(n):
 
     """
     visited = [0] * 60002
-    visited[1] = 1
-    visited[2] = 2
+    visited[1], visited[2] = 1, 2
 
     for i in range(3, n+1):
         visited[i] = visited[i-2] % num + visited[i-1] % num
