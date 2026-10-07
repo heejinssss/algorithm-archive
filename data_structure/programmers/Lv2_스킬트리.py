@@ -12,4 +12,4 @@ def solution(skill, skill_trees):
         else:
             answer += 1
 
-    return answerstatus
+    return answer
