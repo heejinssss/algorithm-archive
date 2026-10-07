@@ -1,3 +1,5 @@
+# 다시 풀기
+
 def solution(skill, skill_trees):
     answer = 0
 
