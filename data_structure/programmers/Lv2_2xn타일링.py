@@ -6,7 +6,7 @@ def solution(n):
     if n == 2:
         return 2
 
-    """
+    """ 구버전
     visited = [0] * 60002
     visited[1], visited[2] = 1, 2
 
