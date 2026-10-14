@@ -1,5 +1,3 @@
-# 다시 풀기
-
 from collections import deque
 
 def solution(maps):
@@ -60,3 +58,57 @@ def bfs(maps, sx, sy, n, m, visited_L, target):
                     q.append([nx, ny])
 
     return -1, -1, visited_L
+
+"""
+from collections import deque
+
+def solution(maps):
+    n, m = len(maps), len(maps[0])
+
+    def bfs(start, target):
+        visited = [[-1] * m for _ in range(n)]
+        sx, sy = start
+        visited[sx][sy] = 0
+        q = deque([(sx, sy)])
+
+        dx = [0, -1, 0, 1]
+        dy = [1, 0, -1, 0]
+
+        while q:
+            x, y = q.popleft()
+
+            if maps[x][y] == target:
+                return visited[x][y], (x, y)
+
+            for i in range(4):
+                nx, ny = x + dx[i], y + dy[i]
+
+                if not (0 <= nx < n and 0 <= ny < m):
+                    continue
+
+                if maps[nx][ny] == "X" or visited[nx][ny] != -1:
+                    continue
+
+                visited[nx][ny] = visited[x][y] + 1
+                q.append((nx, ny))
+
+        return -1, None
+
+    # 시작점 찾기
+    for i in range(n):
+        for j in range(m):
+            if maps[i][j] == "S":
+                start = (i, j)
+
+    # 시작점 -> 레버
+    dist1, lever = bfs(start, "L")
+    if dist1 == -1:
+        return -1
+
+    # 레버 -> 출구
+    dist2, exit_pos = bfs(lever, "E")
+    if dist2 == -1:
+        return -1
+
+    return dist1 + dist2
+"""
