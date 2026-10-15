@@ -1,3 +1,5 @@
+# 다시 풀기
+
 def solution(bridge_length, weight, truck_weights):
     answer = 1
     x = truck_weights.pop(0)
