@@ -1,5 +1,10 @@
 # 다시 풀기
 
+"""
+트럭은 1초에 다리 길이 1씩 전진한다.
+트럭은 (올라갈 수 있으면) 1초에 한 대씩 다리에 올라갈 수 있다
+"""
+
 def solution(bridge_length, weight, truck_weights):
     second = 0
     cur_truck = 0
