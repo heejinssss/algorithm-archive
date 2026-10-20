@@ -1,3 +1,5 @@
+# 다시 풀기
+
 def solution(queue1, queue2):
 
     total = sum(queue1) + sum(queue2)
@@ -8,7 +10,7 @@ def solution(queue1, queue2):
     target = total // 2
     count, idx1, idx2 = 0, 0, 0
     _sum = sum(queue1)
-    _max = len(queue1) * 2
+    _max = (len(queue1) * 2) + 1
 
     while count < _max:
         if _sum < target:
@@ -21,4 +23,4 @@ def solution(queue1, queue2):
             return count
         count += 1
 
-    return -1
+    return count if _sum == target else -1
