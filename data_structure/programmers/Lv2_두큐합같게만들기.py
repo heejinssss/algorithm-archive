@@ -10,17 +10,17 @@ def solution(queue1, queue2):
     target = total // 2
     count, idx1, idx2 = 0, 0, 0
     _sum = sum(queue1)
-    _max = (len(queue1) * 2) + 1
+    _max = len(queue1) + len(queue2) + 1
 
-    while count < _max:
-        if _sum < target:
+    while count <= _max:
+        if _sum == target:
+            return count
+        elif _sum < target:
             _sum += queue2[idx2 % len(queue2)]
             idx2 += 1
-        elif _sum > target:
+        else:
             _sum -= queue1[idx1 % len(queue1)]
             idx1 += 1
-        else:
-            return count
         count += 1
 
-    return count if _sum == target else -1
+    return -1
