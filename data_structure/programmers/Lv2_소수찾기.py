@@ -4,11 +4,16 @@ import itertools
 
 def solution(numbers):
     answer = 0
-    prime = []
+    prime = set()
 
     for i in range(1, len(numbers)+1):
-        prime.append(list(itertools.permutations(list(numbers), i)))
+        for p in itertools.permutations(list(numbers), i):
+            num = int("".join(p))
+            prime.add(num)
 
     print(prime)
+
+    for p in prime:
+        pass
 
     return answer
