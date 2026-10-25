@@ -1,6 +1,5 @@
-# 다시 풀기
-
 import itertools
+import math
 
 def solution(numbers):
     answer = 0
@@ -11,9 +10,13 @@ def solution(numbers):
             num = int("".join(p))
             prime.add(num)
 
-    print(prime)
-
     for p in prime:
-        pass
+        if p < 2:
+            continue
+        for i in range (2, int(math.sqrt(p)+1)): # 2부터 x의 제곱근까지의 숫자
+            if p % i == 0:
+                break
+        else:
+            answer += 1
 
     return answer
