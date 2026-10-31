@@ -8,6 +8,7 @@ def solution(weights):
     for i in range(len(weights)):
         wi = weights[i]
         tmp = 0
+        # 기존에 탐색한 값과 동일한 무게이면
         if dic[wi] >= 0:
             continue
         for j in range(i+1, len(weights)):
