@@ -4,10 +4,6 @@ from collections import deque
 
 def solution(book_time):
 
-    def to_minutes(time):
-        h, m = map(int, time.split(":"))
-        return h * 60 + m
-
     answer = 0
     q = deque()
 
@@ -15,3 +11,7 @@ def solution(book_time):
         pass
 
     return answer
+
+def to_minutes(time):
+    h, m = map(int, time.split(":"))
+    return h * 60 + m
