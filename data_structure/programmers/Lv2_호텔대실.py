@@ -20,6 +20,7 @@ def solution(book_time):
 
     return answer
 
+# 시간을 분 단위로 변환하는 함수
 def to_minutes(time):
     h, m = map(int, time.split(":"))
     return h * 60 + m
