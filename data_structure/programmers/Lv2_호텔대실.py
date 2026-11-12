@@ -1,10 +1,12 @@
 # 다시 풀기
 
-from collections import deque
+# from collections import deque
+import heapq
 
 def solution(book_time):
     answer = 0
-    q = deque()
+    # q = deque()
+    q = []
 
     book_time.sort()
 
@@ -12,10 +14,16 @@ def solution(book_time):
         start = to_minutes(start)
         end = to_minutes(end) + 10
 
-        if q and q[0] <= start:
-            q.popleft()
+        # if q and q[0] <= start:
+        #     q.popleft()
 
-        q.append(end)
+        # q.append(end)
+        # answer = max(answer, len(q))
+    
+        if q and q[0] <= start:
+            heapq.heappop(q)
+
+        heapq.heappush(q, end)
         answer = max(answer, len(q))
 
     return answer
