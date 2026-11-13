@@ -2,7 +2,6 @@ import heapq
 
 def solution(book_time):
     answer = 0
-    # q = deque()
     q = []
 
     book_time.sort()
