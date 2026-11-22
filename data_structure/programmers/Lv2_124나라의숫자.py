@@ -4,5 +4,6 @@ def solution(n):
     answer = ''
     """
     나머지 0, 1, 2
+          4, 1, 2
     """
     return answer
