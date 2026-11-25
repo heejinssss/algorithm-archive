@@ -2,20 +2,20 @@
 
 def solution(n):
     answer = ''
-    """
-    나머지 0, 1, 2
-          4, 1, 2
 
-    1   1
-    2   2
-    3   4
-    4  11
-    5  12
-    6  14
-    7  21
-    8  22
-    9  24
-    10 41
-    ...
-    """
-    return answer
+    while n > 0:
+        remainder = n % 3
+
+        if remainder == 0:
+            answer += '4'
+            n = n // 3 - 1
+
+        elif remainder == 1:
+            answer += '1'
+            n = n // 3
+
+        else:
+            answer += '2'
+            n = n // 3
+
+    return answer[::-1]
