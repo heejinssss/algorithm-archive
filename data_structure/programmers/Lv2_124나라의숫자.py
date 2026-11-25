@@ -4,13 +4,13 @@ def solution(n):
     answer = ''
 
     while n > 0:
-        remainder = n % 3
+        mod = n % 3
 
-        if remainder == 0:
+        if mod == 0:
             answer += '4'
             n = n // 3 - 1
 
-        elif remainder == 1:
+        elif mod == 1:
             answer += '1'
             n = n // 3
 
